@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SuitService } from 'src/app/services/suit.service';
+import { Suit } from 'src/app/model/suit';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-suit-list',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuitListComponent implements OnInit {
 
-  constructor() { }
+  private suits: Suit[];
+
+  private subscription: Subscription;
+
+  constructor(private suitService: SuitService) { }
 
   ngOnInit() {
+
+    //Async
+    this.subscription = this.suitService.list().subscribe( suits => {
+      this.suits = suits;
+    });
   }
 
 }
