@@ -1,3 +1,6 @@
-<p>
-  suit-list works!
-</p>
+<div *ngIf="this.suits">
+  Exampe list
+  <ul>
+    <li *ngFor="let suit of suits">id: {{ suit.id }} has color: {{ suit.color }}</li>
+  </ul>
+</div>
