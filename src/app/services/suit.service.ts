@@ -16,7 +16,7 @@ export class SuitService {
   constructor(private httpClient: HttpClient) { }
 
   list(): Observable<Suit[]> {
-    return this.httpClient.get<Suit[]>(`${this.url}/${this.endpoint}`); // returns an Observable of type User
+    return this.httpClient.get<Suit[]>(`${this.url}/${this.endpoint}`, { withCredentials: true }); // returns an Observable of type User
   }
 
   create(suit: Suit): Observable<Suit>{
