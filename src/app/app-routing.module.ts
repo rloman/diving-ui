@@ -6,6 +6,11 @@ const routes: Routes = [
   {
     path: 'suits',
     component: SuitListComponent
+  },
+  {
+    path: '',
+    component: SuitListComponent,
+    pathMatch: 'full'
   }
 ];
 
