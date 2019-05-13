@@ -25,6 +25,11 @@ export class SuitService {
     .post<Suit>(`${this.url}/${this.endpoint}`, suit);
 
     return resultFromService; // be aware that this is an Observable
-    
   }
+
+  findById(id: Number): Observable<Suit> {
+    return this.httpClient.get<Suit>(`${this.url}/${this.endpoint}/${id}`, {withCredentials: true});
+  }
+
+
 }
