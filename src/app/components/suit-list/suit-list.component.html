@@ -1,6 +1,8 @@
 <div *ngIf="this.suits">
   Exampe list
   <ul>
-    <li *ngFor="let suit of suits">id: {{ suit.id }} has color: {{ suit.color }}</li>
+    <li *ngFor="let suit of suits">
+        <a [routerLink]="['/suits', suit.id]">id: {{ suit.id }}</a> has color: {{ suit.color }}
+    </li>
   </ul>
 </div>
