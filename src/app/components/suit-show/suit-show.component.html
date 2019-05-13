@@ -1,5 +1,9 @@
 Below the data <br>
 
 <div *ngIf="suit">
-    {{ suit.id}} has color {{suit.color}} and size {{suit.size}}
+    id: {{ suit.id}}<br />
+    color: <input type="text" [(ngModel)]="suit.color"> <br>
+    size:  <input type="text" [(ngModel)]="suit.size"> <br>
 </div>
+
+<button (click)="update();">Update</button>

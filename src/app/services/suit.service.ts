@@ -31,5 +31,9 @@ export class SuitService {
     return this.httpClient.get<Suit>(`${this.url}/${this.endpoint}/${id}`, {withCredentials: true});
   }
 
+  update(suit: Suit): Observable<Suit> {
+    return this.httpClient.put<Suit>(`${this.url}/${this.endpoint}/${suit.id}`, suit, {withCredentials: true});
+  }
+
 
 }

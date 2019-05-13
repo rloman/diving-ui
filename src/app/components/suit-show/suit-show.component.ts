@@ -26,4 +26,11 @@ export class SuitShowComponent implements OnInit {
       this.suit = suit;
     })
   }
+
+
+  update(): void {
+    this.suitService.update(this.suit).subscribe(updatedSuit => {
+      this.suit = updatedSuit;
+    })
+  }
 }
